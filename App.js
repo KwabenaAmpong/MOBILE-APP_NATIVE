@@ -1,29 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View , Image, SafeAreaView, TouchableOpacity, Alert, Button} from 'react-native';
+import  LOGIN from  './SRC/pages/LOGIN';
 
 export default function App() {
- const forPress = () => console.log('Text Pressed');
+ 
  const forpress = () => console.log('Pic Pressed');
   return (
     <SafeAreaView style={styles.container}>
 
-     <Text numberOfLines = {3} onPress={forPress} >Welcome to my IA project</Text>
+     <Text>LOGIN TO MY APP</Text>
       <TouchableOpacity onPress={forpress}> 
         
       <Image source={{
        width:200,
        height:210, 
         
-       uri: "https://picsum.photos/200/300"}}/> 
+       uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSmCAhdKIfdkKTivymRAZpOfN9rsNILUWoJg&usqp=CAU"}}/> 
         
         </TouchableOpacity>
-        <Button color="black" title="CLICK TO SIGNUP" 
-        onPress={() => Alert.alert("SIGN UP", "Are You Sure you want to Sign Up", [
-          { text: "YES" },
-          { text: "NO" },
-        ]
-        )} />
+        <Button color="black" title="CLICK TO LOGIN" 
+        onPress
+       />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
