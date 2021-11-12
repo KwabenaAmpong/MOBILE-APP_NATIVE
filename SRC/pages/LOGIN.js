@@ -1,7 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import React, { Component } from 'react';
-import { StyleSheet, Text, View , Image, SafeAreaView, TouchableOpacity, Alert, Button} from 'react-native';
-
+c
 export default class Login extends Component<{}>{
     render(){
         return(
@@ -10,12 +7,15 @@ export default class Login extends Component<{}>{
             </View>
 
         )
-
-
-    }
-
-
-
+   }
 }
-
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: 'dodgerblue',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+  });
+    
 
