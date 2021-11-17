@@ -44,7 +44,7 @@ const ProductDetails = ({ route, navigation }) => {
         })
       );
 
-      //error disappears
+     
       setTimeout(() => {
         dispatch(resetError());
       }, 5000);
@@ -52,7 +52,6 @@ const ProductDetails = ({ route, navigation }) => {
       return;
     }
 
-    //add the object data for the product to cart
     addItemToCart({
       id,
       title,

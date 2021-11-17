@@ -49,7 +49,7 @@ const Login = () => {
         <StyledLogin>
           <StyledLoginText>
             <StyledLoginTextMain>Welcome</StyledLoginTextMain>
-            <StyledLoginTextSub>To La Violette</StyledLoginTextSub>
+            <StyledLoginTextSub>To THE E-SHOP</StyledLoginTextSub>
           </StyledLoginText>
           <StyledLoginLogo source={require("../assets/logo.jpg")} />
           <StyledLoginFields>
@@ -67,7 +67,7 @@ const Login = () => {
           </StyledLoginFields>
           <StyledLoginBtns>
             <StyledButtons onPress={handleSignin}>
-              <StyledButtonValue>Sign in</StyledButtonValue>
+              <StyledButtonValue>SIGN IN</StyledButtonValue>
             </StyledButtons>
           </StyledLoginBtns>
         </StyledLogin>
@@ -84,10 +84,10 @@ const StyledLogin = styled.View`
 `;
 
 const StyledLoginLogo = styled.Image`
-  height: 70px;
-  width: 70px;
-  border-radius: 50px;
-  margin-bottom: 20%;
+  height: 200px;
+  width: 200px;
+  border-radius: 300px;
+  margin-bottom: 30%;
 `;
 
 const StyledLoginText = styled.View`
@@ -124,7 +124,7 @@ const StyledButtons = styled.TouchableOpacity`
 
 const StyledButtonValue = styled.Text`
   font-size: 18px;
-  color: #fff;
+  color: white;
 `;
 
 const StyledLoginFields = styled.View``;
