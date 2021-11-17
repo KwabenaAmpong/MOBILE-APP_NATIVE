@@ -16,14 +16,14 @@ const Login = ({ navigation }) => {
     if (username && password) {
       navigation.navigate("Home");
     } else {
-      alert("Fill in credentials");
+      alert("Enter Your Details Here");
     }
   };
 
   return (
     <SafeAreaView
       style={{
-        backgroundColor: "#ADD8c6",
+        backgroundColor: "dodgerblue",
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
@@ -38,14 +38,14 @@ const Login = ({ navigation }) => {
           height: 170,
           borderRadius: 10,
           marginBottom: 15,
-          transform: [{ rotate: "20deg" }],
+          transform: [{ rotate: "90deg" }],
         }}
       />
       <Text style={{ fontSize: 25, marginBottom: 20, marginTop: 20 }}>
-        Welcome to Larbi's Shop
+        Welcome to the Online Shop
       </Text>
       <Text style={{ fontSize: 18 }}>
-        Enter anything as password and Username
+        
       </Text>
       <TextInput
         style={styles.input}
