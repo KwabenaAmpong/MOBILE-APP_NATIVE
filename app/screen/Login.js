@@ -1,134 +1,86 @@
 import React, { useState } from "react";
-import { useNavigation } from "@react-navigation/core";
-import { KeyboardAvoidingView, Text } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  Image,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import styled from "styled-components/native";
 
-import { useSelector, useDispatch } from "react-redux";
-import { resetError, setError } from "../redux/actions/actions";
-
-import Alert from "../components/Alert";
-
-const Login = () => {
-  const dispatch = useDispatch();
-  const navigation = useNavigation();
-
-  //state variables for the password and errors used
-  const [email, setEmail] = useState();
+const Login = ({ navigation }) => {
+  const [username, setUsername] = useState();
   const [password, setPassword] = useState();
 
-  const error = useSelector((state) => state.error);
-
-  const handleSignin = () => {
-    if (email && password) {
+  const handleSubmitLogin = () => {
+    if (username && password) {
       navigation.navigate("Home");
     } else {
-      dispatch(
-        setError({
-          message: "No login credentials given",
-          type: "danger",
-          screen: "login",
-        })
-      );
-      setTimeout(() => {
-        dispatch(resetError());
-      }, 5000);
+      alert("Fill in credentials");
     }
   };
 
   return (
-    <SafeAreaView styles={{ flex: 1, position: "relative" }}>
-      {error.type && (
-        <Alert
-          screen={error.screen}
-          type={error.type}
-          message={error.message}
-        />
-      )}
-      <KeyboardAvoidingView behavior="padding">
-        <StyledLogin>
-          <StyledLoginText>
-            <StyledLoginTextMain>Welcome</StyledLoginTextMain>
-            <StyledLoginTextSub>To THE E-SHOP</StyledLoginTextSub>
-          </StyledLoginText>
-          <StyledLoginLogo source={require("../assets/logo.jpg")} />
-          <StyledLoginFields>
-            <StyledInputs
-              type="username"
-              placeholder="Username"
-              onChange={(text) => setEmail(text)}
-            />
-            <StyledInputs
-              type="password"
-              placeholder="Password"
-              onChange={(text) => setPassword(text)}
-              secureTextEntry={true}
-            />
-          </StyledLoginFields>
-          <StyledLoginBtns>
-            <StyledButtons onPress={handleSignin}>
-              <StyledButtonValue>SIGN IN</StyledButtonValue>
-            </StyledButtons>
-          </StyledLoginBtns>
-        </StyledLogin>
-      </KeyboardAvoidingView>
+    <SafeAreaView
+      style={{
+        backgroundColor: "#ADD8c6",
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Image
+        source={{
+          uri: "https://media.istockphoto.com/photos/variety-of-fresh-organic-vegetables-and-fruits-in-the-garden-picture-id1280856062?b=1&k=20&m=1280856062&s=170667a&w=0&h=wQu-c2ZjzeCBkAGEj69xpF611lx1i_xim48vOCj_Dw0=",
+        }}
+        style={{
+          width: 180,
+          height: 170,
+          borderRadius: 10,
+          marginBottom: 15,
+          transform: [{ rotate: "20deg" }],
+        }}
+      />
+      <Text style={{ fontSize: 25, marginBottom: 20, marginTop: 20 }}>
+        Welcome to Larbi's Shop
+      </Text>
+      <Text style={{ fontSize: 18 }}>
+        Enter anything as password and Username
+      </Text>
+      <TextInput
+        style={styles.input}
+        onChangeText={(text) => setUsername(text)}
+        placeholder="Username"
+      />
+      <TextInput
+        style={styles.input}
+        onChangeText={(text) => setPassword(text)}
+        placeholder="Password"
+        secureTextEntry
+      />
+      <TouchableOpacity onPress={handleSubmitLogin} style={styles.button}>
+        <Text style={{ fontSize: 20, color: "#fff" }}>Login</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };
 
-const StyledLogin = styled.View`
-  width: 90%;
-  margin: 20% auto;
-  justify-content: center;
-  align-items: center;
-`;
-
-const StyledLoginLogo = styled.Image`
-  height: 200px;
-  width: 200px;
-  border-radius: 300px;
-  margin-bottom: 30%;
-`;
-
-const StyledLoginText = styled.View`
-  margin-bottom: 20%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-`;
-
-const StyledLoginTextMain = styled.Text`
-  font-size: 20px;
-  color: #a1a1a1;
-`;
-
-const StyledLoginTextSub = styled.Text`
-  font-size: 30px;
-`;
-
-const StyledInputs = styled.TextInput`
-  width: 80%;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 5%;
-  width: 250px;
-`;
-
-const StyledButtons = styled.TouchableOpacity`
-  padding: 12px 100px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-  background-color: #4285f4;
-`;
-
-const StyledButtonValue = styled.Text`
-  font-size: 18px;
-  color: white;
-`;
-
-const StyledLoginFields = styled.View``;
-
-const StyledLoginBtns = styled.View``;
-
 export default Login;
+
+const styles = StyleSheet.create({
+  input: {
+    backgroundColor: "#fff",
+    width: "60%",
+    padding: 10,
+    margin: 10,
+    borderRadius: 5,
+  },
+  button: {
+    backgroundColor: "#4045Fe",
+    width: "60%",
+    padding: 10,
+    borderRadius: 5,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
