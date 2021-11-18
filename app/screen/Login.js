@@ -50,12 +50,12 @@ const Login = ({ navigation }) => {
       <TextInput
         style={styles.input}
         onChangeText={(text) => setUsername(text)}
-        placeholder="Username"
+        placeholder="Username Here"
       />
       <TextInput
         style={styles.input}
         onChangeText={(text) => setPassword(text)}
-        placeholder="Password"
+        placeholder="Password Here"
         secureTextEntry
       />
       <TouchableOpacity onPress={handleSubmitLogin} style={styles.button}>

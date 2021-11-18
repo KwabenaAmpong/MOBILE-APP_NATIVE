@@ -160,25 +160,25 @@ const ProductDetails = ({ route, navigation }) => {
           active={size === 6}
           onPress={() => setSize(6)}
         >
-          <Text>US 6</Text>
+          <Text>UK 6</Text>
         </StyledProductSizeContainer>
         <StyledProductSizeContainer
           active={size === 7}
           onPress={() => setSize(7)}
         >
-          <Text>US 7</Text>
+          <Text>UK 7</Text>
         </StyledProductSizeContainer>
         <StyledProductSizeContainer
           active={size === 8}
           onPress={() => setSize(8)}
         >
-          <Text>US 8</Text>
+          <Text>UK 8</Text>
         </StyledProductSizeContainer>
         <StyledProductSizeContainer
           active={size === 9}
           onPress={() => setSize(9)}
         >
-          <Text>US 9</Text>
+          <Text>UK 9</Text>
         </StyledProductSizeContainer>
       </StyledProductSize>
       <StyledProductColors>
